@@ -3,11 +3,12 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
-df = pd.read_csv("../input/badminton-bwf-world-tour/data/matches.csv")
+df = pd.read_csv("matches.csv")
 features = [c for c in ["tournament","round","event","discipline","player1","player2"] if c in df.columns]
 df = df[features + ["winner"]].dropna()
 
 df["label"] = (df["winner"] == df["player1"]).astype(int)
+
 le = LabelEncoder()
 for col in features:
     df[col] = le.fit_transform(df[col])
