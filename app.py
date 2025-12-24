@@ -19,3 +19,4 @@ if st.button("Predict"):
 
 st.markdown("<p style='text-align:center;'>Created by Abdul Raheem Liaqat</p>", unsafe_allow_html=True)
 
+
